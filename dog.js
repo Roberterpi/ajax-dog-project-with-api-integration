@@ -44,11 +44,11 @@ fetch(BREEDS_URL)
     }
   })
 
-  select.addEventListener('change', function(event) {
+  select.addEventListener("change", function(event) {
     //console.log(select.value)
     //console.log(select === event.target)
     //console.log(event.target.value);
-    console.log('https://dog.ceo/api/breed/${event.target.value}/images/random')
+    console.log(`https://dog.ceo/api/breed/${event.target.value}/images/random`)
   });
 
   //steps:
