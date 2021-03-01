@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg)
+  }
+}
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+.dog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.spinner {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  animation: 2s spin linear infinite;
+  display: none;
+}
+.dog-img {
+  display: none;
+  height: 50vh;
+  box-shadow: 0px 0px 3px 0px red;
+  border-radius: 10px;
+}
+.show {
+  display: block;
+}
+.breeds {
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 74rem;
+  margin-top: 1rem;
+}
