@@ -1,14 +1,14 @@
 const BREEDS_URL = "https://dog.ceo/api/breeds/image/random";
 
-const promise = fetch(DOG_URL);
 
-promise
+fetch(BREEDS_URL)
   .then(function(response) {
-    const processingPromise = response.json();
-    return processingPromise;
+    return response.json();
   })
-  .then(function(processedResponse) {
-    console.log(breeds);
-  });
+  .then(function(data) {
+    const img = document.createElement('img');
+    img.src = data.message;
+    img.alt = 'cute dog'
 
-console.log("this will log first");
+    document.querySelector('dog').appendChild(img);
+  })
