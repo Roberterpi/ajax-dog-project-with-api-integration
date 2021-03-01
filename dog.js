@@ -33,4 +33,12 @@ fetch(BREEDS_URL)
     const breedsArray = Object.keys(breedsObject);
     //another way of doing it
     //console.log(Object.keys(data.message));
+    const select = document.querySelector('.breeds');
+
+    for(let i=0; i < breedsArray.length; i++) {
+      const option = document.createElement('option');
+      option.value = breedsArray[i];
+      option.innerText = breedsArray[i];
+      select.appendChild(option);
+    }
   })
