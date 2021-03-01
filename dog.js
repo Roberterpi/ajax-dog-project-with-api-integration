@@ -48,7 +48,11 @@ fetch(BREEDS_URL)
     //console.log(select.value)
     //console.log(select === event.target)
     //console.log(event.target.value);
-    console.log(`https://dog.ceo/api/breed/${event.target.value}/images/random`)
+    //console.log(`https://dog.ceo/api/breed/${event.target.value}/images/random`)
+
+    let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`;
+
+    getDoggo(url);
   });
 
   //steps:
@@ -62,3 +66,15 @@ fetch(BREEDS_URL)
   //use the URL to change the current image
 
   //stop showing loading spinner
+
+  const img = document.querySelector('.dog-img');
+
+  function getDoggo(url) {
+    fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      img.src = data.message;
+    })
+  }
