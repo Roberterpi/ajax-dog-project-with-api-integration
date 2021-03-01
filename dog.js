@@ -22,6 +22,7 @@ document.querySelector('.add-dog').addEventListener('click', addDog);
 
 
 const BREEDS_URL = 'https://dog.ceo/api/breeds/list/all';
+const select = document.querySelector('.breeds');
 
 fetch(BREEDS_URL)
   .then(function(response) {
@@ -33,7 +34,7 @@ fetch(BREEDS_URL)
     const breedsArray = Object.keys(breedsObject);
     //another way of doing it
     //console.log(Object.keys(data.message));
-    const select = document.querySelector('.breeds');
+    //const select = document.querySelector('.breeds');
 
     for(let i=0; i < breedsArray.length; i++) {
       const option = document.createElement('option');
@@ -42,3 +43,10 @@ fetch(BREEDS_URL)
       select.appendChild(option);
     }
   })
+
+  select.addEventListener('change', function(event) {
+    //console.log(select.value)
+    //console.log(select === event.target)
+    console.log(event.target.value);
+
+  });
